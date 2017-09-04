@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Memo extends Component {
+class molecule extends Component {
     render() {
         return (
             <div>
@@ -10,4 +10,4 @@ class Memo extends Component {
     }
 }
 
-export default Memo;
+export default molecule;

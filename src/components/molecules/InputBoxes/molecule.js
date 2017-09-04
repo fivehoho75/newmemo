@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-class InputBoxes extends Component {    
+class molecule extends Component {    
     render() {
         const {...rest} = this.props;
         
@@ -28,8 +28,8 @@ class InputBoxes extends Component {
     }
 }
 
-InputBoxes.propTypes = {
+molecule.propTypes = {
     onChange: PropTypes.func
 };
 
-export default InputBoxes;
+export default molecule;

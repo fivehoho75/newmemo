@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { InputBoxes } from 'components';
 
-class Memo extends Component {
+class molecule extends Component {
     render() {
         const {...rest} = this.props;
         
@@ -16,4 +16,4 @@ class Memo extends Component {
     }
 }
 
-export default Memo;
+export default molecule;
