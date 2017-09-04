@@ -6,10 +6,9 @@ class organism extends Component {
         return (
             <div>
                 <nav>
-                    <div className="nav-wrapper blue darken-1">
-                        <BrandLogo/>
+                    <div className="ui blue inverted three item menu">
                         <SearchButton/>
-
+                        <BrandLogo/>
                         <div className="right">
                             <ul>
                             { this.props.isLoggedIn ? <LogoutButton/> : <LoginButton/> }

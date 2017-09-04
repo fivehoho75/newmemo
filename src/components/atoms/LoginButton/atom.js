@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom'
 class atom extends Component {
     render() {
         return (
-            <li>
+            <div className="item">
                 <Link to="login">
                     <i className="material-icons">vpn_key</i>
                 </Link>
-            </li>
+            </div>
         );
     }
 }

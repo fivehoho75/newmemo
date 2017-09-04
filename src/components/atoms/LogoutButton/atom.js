@@ -3,11 +3,11 @@ import React, { Component } from 'react';
 class atom extends Component {
     render() {
         return (
-            <li>
+            <div className="item">
                 <a onClick={this.props.onLogout}>
                     <i className="material-icons">lock_open</i>
                 </a>
-            </li>
+            </div>
         );
     }
 }

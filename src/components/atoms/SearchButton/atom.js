@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 class atom extends Component {
     render() {
         return (
-            <ul>
-                <li><a><i className="material-icons">search</i></a></li>
-            </ul>
+            <div className="item left">
+                <a><i className="material-icons">search</i></a>
+            </div>
         );
     }
 }
