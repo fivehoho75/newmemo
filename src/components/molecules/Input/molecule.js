@@ -8,8 +8,7 @@ class molecule extends Component {
 
     render() {
         const { name, ...rest } = this.props;
-        console.log('rest: ', {...rest});
-        const classStr = "input-field col s12 "  + name ;
+        const classStr = "field "  + name ;
         return (
             <div className={classStr}>
                 <input

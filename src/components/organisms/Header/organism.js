@@ -6,7 +6,7 @@ class organism extends Component {
         return (
             <div>
                 <nav>
-                    <div className="ui secondary blue inverted three menu">
+                    <div className="ui secondary orange inverted three menu">
                         <div className="left menu">
                             <SearchButton/>
                         </div>

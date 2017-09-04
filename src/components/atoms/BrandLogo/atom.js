@@ -5,7 +5,7 @@ class atom extends Component {
     render() {
         return (
             <div className="item">
-                <Link to="/" className="brand-logo center">MEMOPAD</Link>
+                <Link to="/" className="ui inverted white large header">MEMOPAD</Link>
             </div>
         );
     }
