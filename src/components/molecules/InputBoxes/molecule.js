@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-class Memo extends Component {
+class InputBoxes extends Component {    
     render() {
+        const {...rest} = this.props;
+        
         return (
             <div>
                 <div className="input-field col s12 username">
@@ -10,7 +13,7 @@ class Memo extends Component {
                     name="username"
                     type="text"
                     className="validate"
-                    onChange={this.handleChange}/>
+                    {...rest}/>
                 </div>
                 <div className="input-field col s12">
                     <label>Password</label>
@@ -18,12 +21,15 @@ class Memo extends Component {
                     name="password"
                     type="password"
                     className="validate"
-                    onChange={this.handleChange} 
-                    onKeyPress={this.handleKeyPress} />
+                    {...rest} />
                 </div>
             </div>
         );
     }
 }
 
-export default Memo;
+InputBoxes.propTypes = {
+    onChange: PropTypes.func
+};
+
+export default InputBoxes;
