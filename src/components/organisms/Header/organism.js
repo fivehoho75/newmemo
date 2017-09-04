@@ -6,13 +6,13 @@ class organism extends Component {
         return (
             <div>
                 <nav>
-                    <div className="ui blue inverted three item menu">
-                        <SearchButton/>
+                    <div className="ui secondary blue inverted three menu">
+                        <div className="left menu">
+                            <SearchButton/>
+                        </div>
                         <BrandLogo/>
-                        <div className="right">
-                            <ul>
+                        <div className="right menu">
                             { this.props.isLoggedIn ? <LogoutButton/> : <LoginButton/> }
-                            </ul>
                         </div>
                     </div>
                 </nav>
