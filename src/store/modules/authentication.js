@@ -28,6 +28,6 @@ export default handleActions({
 	[REGISTER]: (state, action) => {
 		return state.set('register', Map({
 							status: 'WAITING',
-							error: -1 }));
+							error: action.payload }));
     }
 }, initialState);

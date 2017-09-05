@@ -12,7 +12,7 @@ class page extends Component {
             password: ''
         };
     };
-
+	
     handleChange = (e) => {
         let nextState = {};
         nextState[e.target.name] = e.target.value;
@@ -20,9 +20,11 @@ class page extends Component {
     }
 
     handleRegister = () => {
+		const { RegisterActions } = this.props;
+		
         let id = this.state.username;
         let pw = this.state.password;
-        //RegisterActions()
+        RegisterActions.register(this.state);
         console.log('handleRegister: ', id, ', ', pw);
     }
 	
@@ -41,7 +43,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapToDispatch = (dispatch) => ({
-    RegisterActions: () => bindActionCreators(actions, dispatch)
+    RegisterActions: bindActionCreators(actions, dispatch)
 });
 
 export default connect(mapStateToProps, mapToDispatch)(page);
