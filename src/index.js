@@ -5,8 +5,10 @@ import registerServiceWorker from './registerServiceWorker';
 import 'styles/main.scss';
 import Root from './containers/Root';
 import configStore from './store/config';
+import rootSaga from 'sagas';
 
 const store = configStore();
+store.runSaga(rootSaga);
 
 const render = (Component) => {
     ReactDOM.render(<Component store={store}/>, 
