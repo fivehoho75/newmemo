@@ -5,7 +5,7 @@ class atom extends Component {
         return (
             <div className="item">
                 <a onClick={this.props.onLogout}>
-                    <i className="material-icons">lock_open</i>
+                <i aria-hidden="true" className="lock large icon"/>
                 </a>
             </div>
         );

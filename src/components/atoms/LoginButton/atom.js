@@ -6,7 +6,7 @@ class atom extends Component {
         return (
             <div className="item">
                 <Link to="login">
-                    <i className="material-icons">vpn_key</i>
+                    <i aria-hidden="true" className="unlock large icon"/>
                 </Link>
             </div>
         );
