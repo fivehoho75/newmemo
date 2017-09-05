@@ -1,33 +1,30 @@
 import { createAction, handleActions } from 'redux-actions';
 import { Map } from 'immutable';
 
-const LOGIN = "auth/LOGIN";
-const REGISTER = "auth/REGISTER";
+const REQUEST = 'REQUEST'
+const SUCCESS = 'SUCCESS'
+const FAILURE = 'FAILURE'
 
-export const login = createAction(LOGIN);
-export const register = createAction(REGISTER);
+function createRequestTypes(base) {
+    return [REQUEST, SUCCESS, FAILURE].reduce((acc, type) => {
+          acc[type] = `${base}_${type}`
+          return acc
+      }, {});
+};
 
-const initialState = Map({
-    login: Map({
-        status: 'INIT'
-    }),
-    register: Map({
-        status: 'INIT',
-        error: -1
-    }),
-    status: Map({
-        isLoggedIn: false,
-        currentUser: ''
-    })
-});
+export const LOGIN = createRequestTypes('LOGIN');
+export const REGISTER = createRequestTypes('REGISTER');
 
-export default handleActions({
-    [LOGIN]: (state, action) => {
-        return state.setIn(['login', 'status'], 'WAITING');
-    },
-	[REGISTER]: (state, action) => {
-		return state.set('register', Map({
-							status: 'WAITING',
-							error: action.payload }));
-    }
-}, initialState);
+export const LOAD_REGISTER = 'LOAD_REGISTER';
+
+function action(type, payload = {}) {
+    return {type, ...payload}
+}
+
+export const register = {
+    request: fullName => action(REGISTER[REQUEST], {fullName}),
+    success: (fullName, response) => action(REGISTER[SUCCESS], {fullName, response}),
+    failure: (fullName, error) => action(REGISTER[FAILURE], {fullName, error}),
+  }
+  
+  export const loadRegister = (login, requiredFields = []) => action(LOAD_REGISTER, {login, requiredFields})
