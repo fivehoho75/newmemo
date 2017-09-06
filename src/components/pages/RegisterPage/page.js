@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { PageTemplate, AuthView } from 'components';
 import { connect } from 'react-redux';
 import * as actions from 'store/modules/authentication';
-import {bindActionCreators} from 'redux';
+import { bindActionCreators } from 'redux';
 
 class page extends Component {
 	constructor(props) {
@@ -21,11 +21,7 @@ class page extends Component {
 
     handleRegister = () => {
 		const { RegisterActions } = this.props;
-		
-        let id = this.state.username;
-        let pw = this.state.password;
-        RegisterActions.register(this.state);
-        console.log('handleRegister: ', id, ', ', pw);
+        RegisterActions.registerLoad(this.state);
     }
 	
     render() {
