@@ -11,5 +11,5 @@ req.keys().forEach((key) => {
   modules[moduleName] = req(key).default;
 });
 
-console.log('modules: ', modules);
+//console.log('modules: ', modules);
 export default combineReducers(modules);

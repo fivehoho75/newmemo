@@ -35,7 +35,7 @@ class page extends Component {
     }
 }
 const mapStateToProps = (state) => ({
-    status: {register: state}
+    user: state
 });
 
 const mapToDispatch = (dispatch) => ({
