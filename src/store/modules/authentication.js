@@ -7,7 +7,7 @@ const REGISTER_SUCCESS = 'register/SUCCESS';
 const REGISTER_FAILURE = 'register/FAILURE';
 
 export const registerLoad = createAction(REGISTER_LOAD);
-export const registerRequest = createAction(REGISTER_REQUEST, (username, password) => ({ username, password }));
+export const registerRequest = createAction(REGISTER_REQUEST);
 export const registerSuccess = createAction(REGISTER_SUCCESS);
 export const registerFailure = createAction(REGISTER_FAILURE);
 //export const registerLoad2 = createAction(REGISTER_REQUEST, (username, password) => ({ username, password }));
@@ -43,8 +43,6 @@ export default handleActions({
     },
 	[REGISTER_REQUEST]: (state, action) => {
         console.log('request action: ', JSON.stringify(action));
-        const { username, password } = action.payload;
-        console.log('request params: ', username, ', ', password);
         return state.set('status', 'REQUEST');
     },
     [REGISTER_SUCCESS]: (state, action) => {

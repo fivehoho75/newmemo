@@ -10,8 +10,8 @@ function callApi(endpoint, params) {
     
     console.log('url: ', fullUrl, 'params', JSON.stringify(params));
     return axios.post( fullUrl, params )
-        .then(response => ({response}) )
-        .catch(response => ({response}),
+        .then(response => response )
+        .catch(response => (response),
         error => ({error: error.message || 'Something bad happened'})
     );
 }
